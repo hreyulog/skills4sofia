@@ -41,13 +41,16 @@ When this happens, tell the user exactly what is needed: complete the Taobao ver
 
 The results page is different: the query header remains readable, but the product grid can collapse into `Custom` nodes under containers such as `srp_waterflow_0`, with no title or price text in the UI tree.
 
+Immediately after submission, another weak state can appear: the tree shows the requested query plus one opaque/garbled glyph or almost no meaningful Taobao content, without a confirmed `srp_waterflow_0`/product grid. **Do not swipe this state.** It is not evidence that products are merely further down the page.
+
 When that happens:
 
-1. Confirm from tree that the requested query is active and the result grid exists.
-2. Request `mode: both` once for the stable first result screen.
-3. Use the image to bind title, configuration, displayed price, subsidy/coupon label and shop to the SAME visible product card.
-4. Keep the card geometry from the tree as a consistency check; do not mix fields from adjacent columns/cards.
-5. If a second screen is necessary, do one result-page scroll, use the fresh observation, and request at most one additional image. Do not screenshot every step.
+1. Confirm from tree that the requested query is active. If a result grid exists, continue. If the tree is query-only/opaque/sparse, request `mode: both` once before any scroll.
+2. If the screenshot shows the result grid/product cards, use the image to bind title, configuration, displayed price, subsidy/coupon label and shop to the SAME visible product card.
+3. If the screenshot instead shows the keyboard/suggestion layer obscuring results, dismiss it once with Back and take one fresh observation. Do not restart the search.
+4. If one visual fallback plus that one recovery observation still cannot establish a real result grid or readable cards, leave Taobao as unverified/blocked for this run and continue other requested platforms.
+5. Keep the card geometry from the tree as a consistency check when available; do not mix fields from adjacent columns/cards.
+6. Only after product cards are confirmed may you do one result-page scroll. Request a second image only when the newly visible cards genuinely need visual binding. Do not screenshot every step.
 
 If a future Taobao version exposes full result text in tree again, prefer tree and skip the screenshot. The rule is evidence-driven, not permanently screenshot-first.
 
@@ -83,4 +86,4 @@ For a Taobao-only task, this is a blocker until the human finishes verification.
 
 ## Completion
 
-For a normal search or comparison, two or three clearly readable matching cards are sufficient. Prefer verified card consistency over more scrolling.
+For a normal search or comparison, two or three clearly readable matching cards are sufficient. Prefer verified card consistency over more scrolling. Never alternate `swipe -> empty observe -> swipe/observe` on a sparse result state.

@@ -1,15 +1,15 @@
 {
   "schemaVersion": 1,
-  "catalogVersion": "2026-09-30.5",
+  "catalogVersion": "2026-09-30.6",
   "skills": [
     {
       "name": "sofia-phone-operation",
-      "version": "1.1.0",
+      "version": "1.1.1",
       "enabled": true,
       "layer": "core",
       "priority": 10,
       "artifact": "skills/sofia-phone-operation/SKILL.md",
-      "sha256": "559446d99e81c066164ce8b16ea2855a83b368992e745ded259de72fee14c8d1",
+      "sha256": "200f761c5e7052cc27690f3445fb922094accf2bab0e0db8b85f3a114a1d71fe",
       "activation": {
         "mode": "always",
         "any": [],
@@ -19,12 +19,12 @@
     },
     {
       "name": "sofia-failure-recovery",
-      "version": "1.1.1",
+      "version": "1.1.2",
       "enabled": true,
       "layer": "core",
       "priority": 20,
       "artifact": "skills/sofia-failure-recovery/SKILL.md",
-      "sha256": "b393424d74d00d7b6b531fac3cd6bc3a3741c5fbe24ad498e2edef121528e4a3",
+      "sha256": "b0d8d963b080a97276a047d7aa5e6a79c3c16bec5b0917f9e06efd85031925a3",
       "activation": {
         "mode": "always",
         "any": [],
@@ -34,12 +34,12 @@
     },
     {
       "name": "sofia-price-comparison",
-      "version": "1.1.1",
+      "version": "1.1.2",
       "enabled": true,
       "layer": "task",
       "priority": 40,
       "artifact": "skills/sofia-price-comparison/SKILL.md",
-      "sha256": "4249b657b3476cbc60360ad65f0a3454568b23f2d1a9b35bd344804dff04926a",
+      "sha256": "94c10137beb495651edc5b37a158287f88a0583bbfea527011c4bdc5a0597d7a",
       "activation": {
         "mode": "keywords",
         "any": [
@@ -59,12 +59,12 @@
     },
     {
       "name": "sofia-jd",
-      "version": "1.0.1",
+      "version": "1.0.2",
       "enabled": true,
       "layer": "app",
       "priority": 50,
       "artifact": "skills/sofia-jd/SKILL.md",
-      "sha256": "430cd5efcedc60ca7ed37d5ab7b4874229cf35c3110094e7e1dbf401babb39ea",
+      "sha256": "d85457b245dea9b92edea694da2a0029fcfccc0102e6edb1e16aafb5970cf06a",
       "activation": {
         "mode": "app",
         "any": [],
@@ -80,12 +80,12 @@
     },
     {
       "name": "sofia-taobao",
-      "version": "1.0.3",
+      "version": "1.0.4",
       "enabled": true,
       "layer": "app",
       "priority": 51,
       "artifact": "skills/sofia-taobao/SKILL.md",
-      "sha256": "db485ee002ee21daf0b3f2b50270b7c9459db8707bb4f4cd85ec28fd32c6b626",
+      "sha256": "67f28eeac7f7c4691d59d75368c7693b52325ddf0a9b04eade2134038343d1b4",
       "activation": {
         "mode": "app",
         "any": [],

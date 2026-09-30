@@ -13,6 +13,7 @@ Use this Skill together with Sofia's phone-operation and failure-recovery rules.
 
 - A cold JD launch can briefly expose only system/status-bar nodes. Do not call that a broken or empty app. Allow one fresh tree observation for the page to settle.
 - On the home page, the search frame has been observed around `TN003_search_frame`, with a separate `TN003_search_btn` search button.
+- Nearby home controls can expose scan/camera actions such as `TN003_scan` and `TN003_camera`. They are NOT alternate search controls. Never choose them for a text/product search.
 - The dedicated search page exposes its query field as a `TextArea`; it may not advertise `editable=true` even though it is the real text-entry control.
 - A search-results page should expose the current query in the top search area before the result list. Verify the query before treating any listing as evidence.
 - Treat the page as an existing results page when the active query is visible together with result-list structures/product cards. Do not reopen the search box merely because the page also contains suggestion chips or a shop banner. If the existing query already matches the task and freshness was not explicitly required, read the current results instead of resubmitting the same query.
@@ -20,10 +21,12 @@ Use this Skill together with Sofia's phone-operation and failure-recovery rules.
 ## Search efficiently
 
 1. Open the full JD app returned by app discovery. Do not choose an atom service or browser substitute when the user asked for JD.
-2. On home, open the observed search frame.
+2. On home, open the observed search frame. Avoid adjacent scan/camera controls even when their clickable area is visually close to the search field.
 3. Use one continuous type action on the observed search input: replace the old query and submit in the same phone-tool call when possible. Do not split select-all, typing and submit across multiple rounds; the keyboard/page can change between those actions.
 4. After submission, plan directly from the fresh returned observation. Only use one extra observe when the results are still loading.
 5. Do not use the legacy JD deep-link shopping adapter as a hidden substitute for the normal app workflow.
+
+If a text search unexpectedly opens a barcode/scanner page or triggers a camera permission dialog, treat that as proof that the wrong home control was selected. Do not ask the user to grant camera permission for a price lookup. Dismiss/deny or Back once, return to the prior JD page, then choose the actual search frame from a fresh observation.
 
 ## Read result cards from the tree
 
@@ -49,4 +52,4 @@ JD screenshots have previously triggered a share panel. Therefore:
 
 ## Completion
 
-For a normal price lookup, 1–3 clearly matched search-list cards are enough. Prefer complete, non-ad, same-card evidence. Report exact visible titles, configuration, displayed price, price condition and seller/channel. Do not keep scrolling merely to find a lower number after enough comparable evidence has been collected.
+For a normal price lookup, 1–3 clearly matched search-list cards are enough. Prefer complete, non-ad, same-card evidence. Report exact visible titles, configuration, displayed price, price condition and seller/channel. Once useful exact evidence is available, stop JD rather than entering detail or scrolling merely to find a lower number. One result-page scroll is normally enough; use another only when the first confirmed result screen contains no plausible exact match.
