@@ -1,0 +1,51 @@
+{
+  "schemaVersion": 1,
+  "catalogVersion": "2026-09-30.1",
+  "skills": [
+    {
+      "name": "sofia-phone-operation",
+      "version": "1.0.0",
+      "enabled": true,
+      "layer": "core",
+      "priority": 10,
+      "artifact": "skills/sofia-phone-operation/SKILL.md",
+      "sha256": "88d9188d6e32e106f2dc1fa325088b7b4f46d28d34c561b1f2f952cc3d25d223",
+      "activation": { "mode": "always", "any": [], "appAliases": [], "bundles": [] }
+    },
+    {
+      "name": "sofia-failure-recovery",
+      "version": "1.0.0",
+      "enabled": true,
+      "layer": "core",
+      "priority": 20,
+      "artifact": "skills/sofia-failure-recovery/SKILL.md",
+      "sha256": "7152bb27d1ee1ec6cdcd0a2e8319e744d65c6c32b2373276d07be08d8655199e",
+      "activation": { "mode": "always", "any": [], "appAliases": [], "bundles": [] }
+    },
+    {
+      "name": "sofia-price-comparison",
+      "version": "1.0.0",
+      "enabled": true,
+      "layer": "task",
+      "priority": 40,
+      "artifact": "skills/sofia-price-comparison/SKILL.md",
+      "sha256": "7c53067a771f9df636d7bae5fc4ea13034fe1df1c0071189e2858a0dca175139",
+      "activation": {
+        "mode": "keywords",
+        "any": ["比价", "价格", "多少钱", "售价", "优惠", "补贴", "国补", "price comparison", "compare price"],
+        "appAliases": [],
+        "bundles": []
+      }
+    },
+    {
+      "name": "sofia-result-presentation",
+      "version": "1.0.0",
+      "enabled": true,
+      "layer": "presentation",
+      "priority": 90,
+      "artifact": "skills/sofia-result-presentation/SKILL.md",
+      "sha256": "b31abd36734ea3c42dc74304d54570d3a7180fd6d6339eb22a73ccc6722e3ece",
+      "activation": { "mode": "always", "any": [], "appAliases": [], "bundles": [] }
+    }
+  ]
+}
