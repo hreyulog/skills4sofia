@@ -1,40 +1,102 @@
 {
   "schemaVersion": 1,
-  "catalogVersion": "2026-09-30.1",
+  "catalogVersion": "2026-09-30.2",
   "skills": [
     {
       "name": "sofia-phone-operation",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "enabled": true,
       "layer": "core",
       "priority": 10,
       "artifact": "skills/sofia-phone-operation/SKILL.md",
-      "sha256": "88d9188d6e32e106f2dc1fa325088b7b4f46d28d34c561b1f2f952cc3d25d223",
-      "activation": { "mode": "always", "any": [], "appAliases": [], "bundles": [] }
+      "sha256": "559446d99e81c066164ce8b16ea2855a83b368992e745ded259de72fee14c8d1",
+      "activation": {
+        "mode": "always",
+        "any": [],
+        "appAliases": [],
+        "bundles": []
+      }
     },
     {
       "name": "sofia-failure-recovery",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "enabled": true,
       "layer": "core",
       "priority": 20,
       "artifact": "skills/sofia-failure-recovery/SKILL.md",
-      "sha256": "7152bb27d1ee1ec6cdcd0a2e8319e744d65c6c32b2373276d07be08d8655199e",
-      "activation": { "mode": "always", "any": [], "appAliases": [], "bundles": [] }
+      "sha256": "0f00e19c9cef6d1892a117cdf533931a9e0068cfdc8e0207f6acc7bfb95a16b5",
+      "activation": {
+        "mode": "always",
+        "any": [],
+        "appAliases": [],
+        "bundles": []
+      }
     },
     {
       "name": "sofia-price-comparison",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "enabled": true,
       "layer": "task",
       "priority": 40,
       "artifact": "skills/sofia-price-comparison/SKILL.md",
-      "sha256": "7c53067a771f9df636d7bae5fc4ea13034fe1df1c0071189e2858a0dca175139",
+      "sha256": "7832682ecf2dc1d0f4735f506d9f2e71fe2ec870ea5b65bea12829699965b6da",
       "activation": {
         "mode": "keywords",
-        "any": ["比价", "价格", "多少钱", "售价", "优惠", "补贴", "国补", "price comparison", "compare price"],
+        "any": [
+          "比价",
+          "价格",
+          "多少钱",
+          "售价",
+          "优惠",
+          "补贴",
+          "国补",
+          "price comparison",
+          "compare price"
+        ],
         "appAliases": [],
         "bundles": []
+      }
+    },
+    {
+      "name": "sofia-jd",
+      "version": "1.0.0",
+      "enabled": true,
+      "layer": "app",
+      "priority": 50,
+      "artifact": "skills/sofia-jd/SKILL.md",
+      "sha256": "b827000b0660006864ee19b59d17076bf6ef0e4dda4d7eb47c7173ac7c9b466f",
+      "activation": {
+        "mode": "app",
+        "any": [],
+        "appAliases": [
+          "京东",
+          "JD",
+          "jd"
+        ],
+        "bundles": [
+          "com.jd.hm.mall"
+        ]
+      }
+    },
+    {
+      "name": "sofia-taobao",
+      "version": "1.0.0",
+      "enabled": true,
+      "layer": "app",
+      "priority": 51,
+      "artifact": "skills/sofia-taobao/SKILL.md",
+      "sha256": "bff18209405ed4a786c102adf07e5e358ffe30649bf36422473f485648ad687e",
+      "activation": {
+        "mode": "app",
+        "any": [],
+        "appAliases": [
+          "淘宝",
+          "Taobao",
+          "taobao"
+        ],
+        "bundles": [
+          "com.taobao.taobao4hmos"
+        ]
       }
     },
     {
@@ -45,7 +107,12 @@
       "priority": 90,
       "artifact": "skills/sofia-result-presentation/SKILL.md",
       "sha256": "b31abd36734ea3c42dc74304d54570d3a7180fd6d6339eb22a73ccc6722e3ece",
-      "activation": { "mode": "always", "any": [], "appAliases": [], "bundles": [] }
+      "activation": {
+        "mode": "always",
+        "any": [],
+        "appAliases": [],
+        "bundles": []
+      }
     }
   ]
 }

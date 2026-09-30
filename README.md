@@ -12,6 +12,8 @@ skills/
   sofia-phone-operation/SKILL.md
   sofia-failure-recovery/SKILL.md
   sofia-price-comparison/SKILL.md
+  sofia-jd/SKILL.md
+  sofia-taobao/SKILL.md
   sofia-result-presentation/SKILL.md
 ```
 

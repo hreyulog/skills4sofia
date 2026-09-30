@@ -7,6 +7,8 @@ description: Compare products across requested shopping apps using exact SKU evi
 
 Apply only if the user requested shopping research or a comparison. Follow the phone-operation and failure-recovery Skills. Do not perform purchases, add to cart, log in or solve challenges.
 
+When an app-specific Skill such as `sofia-jd` or `sofia-taobao` is loaded, use that Skill's page-recognition and evidence strategy instead of applying one generic screenshot/tree assumption to every platform.
+
 ## Scope and search
 
 - Keep the requested platform list, model, RAM/storage, condition and other specified attributes. Do not replace Standard with Pro, Pro Max, refurbished or a different capacity. If the user left an essential attribute ambiguous, ask briefly.
@@ -16,8 +18,8 @@ Apply only if the user requested shopping research or a comparison. Follow the p
 
 ## Evidence and limits
 
-- Examine up to three plausible listings and at most two result-page scrolls per platform. Prefer a verified match over endless browsing. Use at most one product-detail attempt per platform; if it requires login, keep only the search-list evidence and label it as such.
-- Record platform, exact visible product title, RAM/storage, seller, displayed price, offer label and verification level. Tie these fields to the SAME visible product row. A query heading, generic title, nearby advertisement or unrelated row does not prove the SKU. If the tree cannot associate fields, use one image or mark that listing unverified.
+- Examine up to three plausible listings and at most two result-page scrolls per platform. Prefer a verified match over endless browsing. Use at most one product-detail attempt per platform; if it requires login, keep only the search-list evidence and label it as such. A platform Skill may impose a tighter image budget; follow the tighter limit.
+- Record platform, exact visible product title, RAM/storage, seller, displayed price, offer label and verification level. Tie these fields to the SAME visible product row or product-card parent. A query heading, generic title, nearby advertisement or unrelated row does not prove the SKU. If the tree cannot associate fields, use the app Skill's bounded visual fallback or mark that listing unverified.
 - Separate ordinary displayed prices from coupons, trade-in, member prices and regional subsidies. Do not subtract discounts yourself or call a conditional offer an unconditional checkout price. A “from” price or unspecified SKU is not a confirmed match.
 - Prices visible in search results can be reported as search-list prices. Do not call them verified checkout prices. Never invent missing product links, seller names or specifications.
 - Stop after 12 device calls on a platform (discovery excluded). Finish earlier when a useful match or a clear blocker is established. Keep a short record of what succeeded and move on without live coaching.
