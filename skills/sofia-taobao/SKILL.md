@@ -33,6 +33,10 @@ The dedicated search page currently exposes:
 
 Use the actual TextInput. Replace the old query rather than appending to a previous one. Submit through the observed search action or the phone tool's combined replace+submit path. Verify the query shown on the results header.
 
+If submission lands on a platform risk/safety verification page (for example a route containing `punish`, `安全校验`, `验证`, slider/CAPTCHA or equivalent risk-control wording), stop automated Taobao interaction immediately. Do not drag the slider, retry the search, refresh repeatedly, request images to solve the challenge, or navigate around it. Leave the verification page intact for the human.
+
+When this happens, tell the user exactly what is needed: complete the Taobao verification manually on the executor phone, then ask Sofia to continue. For a multi-platform task, preserve evidence already collected from other apps and continue those independent platforms before returning a PARTIAL result. For a Taobao-only task, return BLOCKED with that single next action. If a later user turn asks to continue after manual verification, reopen/observe Taobao first; if the verification page is gone and the requested query/results are visible, resume from that state instead of starting the search over.
+
 ### Search results
 
 The results page is different: the query header remains readable, but the product grid can collapse into `Custom` nodes under containers such as `srp_waterflow_0`, with no title or price text in the UI tree.

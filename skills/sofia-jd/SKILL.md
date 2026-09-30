@@ -15,6 +15,7 @@ Use this Skill together with Sofia's phone-operation and failure-recovery rules.
 - On the home page, the search frame has been observed around `TN003_search_frame`, with a separate `TN003_search_btn` search button.
 - The dedicated search page exposes its query field as a `TextArea`; it may not advertise `editable=true` even though it is the real text-entry control.
 - A search-results page should expose the current query in the top search area before the result list. Verify the query before treating any listing as evidence.
+- Treat the page as an existing results page when the active query is visible together with result-list structures/product cards. Do not reopen the search box merely because the page also contains suggestion chips or a shop banner. If the existing query already matches the task and freshness was not explicitly required, read the current results instead of resubmitting the same query.
 
 ## Search efficiently
 
@@ -30,9 +31,11 @@ JD's current HarmonyOS result list exposes strong tree evidence. Prefer `mode: t
 
 - A product card can expose a clickable parent such as `card_content`.
 - Bind title, displayed price, offer label, crossed/original price, sales and rating only when they are descendants of the SAME product-card parent.
-- Store/shop text such as `card_shop_name` must be associated with that same card before reporting it.
+- Store/shop text such as `card_shop_name` must be associated with that same card before reporting it. A page-level `shopBar` or a top banner such as `华为京东自营旗舰店` does NOT prove that every card below is sold by that shop.
 - Examples of labels that are price conditions rather than unconditional checkout prices include `国补到手价`, `补贴价`, coupons, trade-in and member offers.
 - A title containing Mate 80 Pro, refurbished/used wording, a different capacity, or an accessory is not a match for a requested standard Mate 80 SKU.
+- Never complete a truncated specification from context. `12GB+25…` is not evidence of `12GB+256GB`; report the visible text as truncated/unknown unless the complete capacity is visible elsewhere in the SAME card.
+- Prefer organic/non-ad result cards. If a card is marked `广告`, do not use it as the primary comparison when a comparable non-ad match is visible. If an ad is the only readable candidate, label it explicitly as an ad and keep it separate from organic evidence.
 - Search-list evidence is enough for a read-only comparison. Enter at most one product detail per platform only when the task truly needs detail-level evidence and the page is not blocked by login.
 
 ## Screenshot and Sofia PiP
@@ -46,4 +49,4 @@ JD screenshots have previously triggered a share panel. Therefore:
 
 ## Completion
 
-For a normal price lookup, 1–3 clearly matched search-list cards are enough. Report exact visible titles, configuration, displayed price, price condition and seller/channel. Do not keep scrolling merely to find a lower number after enough comparable evidence has been collected.
+For a normal price lookup, 1–3 clearly matched search-list cards are enough. Prefer complete, non-ad, same-card evidence. Report exact visible titles, configuration, displayed price, price condition and seller/channel. Do not keep scrolling merely to find a lower number after enough comparable evidence has been collected.
