@@ -67,6 +67,20 @@ Sofia may stay visible in a system PiP while Taobao is foreground.
 - If the PiP covers part of a product card, do not guess the hidden text. Prefer another fully visible card or move the result content once so the card becomes unobstructed.
 - Clipboard/share/promotion overlays are separate windows. Dismiss an ordinary popup once if safe; login, CAPTCHA, privacy or permission choices belong to the user.
 
+## Human verification handoff
+
+Taobao may show a platform risk-control page with a slider, `punish` route, `安全校验`, `验证`, CAPTCHA or similar wording. Treat this as a human-only verification step.
+
+1. Do not automate, drag or solve the slider/challenge.
+2. Do not refresh, reopen Taobao, restart the search or repeatedly screenshot the challenge page.
+3. Leave Taobao on the verification page and keep Sofia's PiP visible.
+4. Tell the user: `淘宝需要人工验证，请在执行手机上完成滑块验证，完成后对 Sofia 说“继续”。`
+5. Preserve any evidence already collected from JD or other apps.
+6. On the later `继续` turn, observe Taobao before taking any action. If the verification page is gone and the requested query/results are visible, resume from that exact state. Do not submit the same search again unless the query is missing or wrong.
+7. If the verification page is still present, remain blocked and repeat only the manual-action request; do not attempt the challenge yourself.
+
+For a Taobao-only task, this is a blocker until the human finishes verification. For a multi-platform comparison, finish other independent platforms first, then report Taobao as waiting for manual verification rather than fabricating or substituting web results.
+
 ## Completion
 
 For a normal search or comparison, two or three clearly readable matching cards are sufficient. Prefer verified card consistency over more scrolling.

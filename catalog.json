@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "catalogVersion": "2026-09-30.4",
+  "catalogVersion": "2026-09-30.5",
   "skills": [
     {
       "name": "sofia-phone-operation",
@@ -80,12 +80,12 @@
     },
     {
       "name": "sofia-taobao",
-      "version": "1.0.2",
+      "version": "1.0.3",
       "enabled": true,
       "layer": "app",
       "priority": 51,
       "artifact": "skills/sofia-taobao/SKILL.md",
-      "sha256": "c4a58defe9f913fa7dadd578d50a39452a346448a881699e680a6b948c70d61b",
+      "sha256": "db485ee002ee21daf0b3f2b50270b7c9459db8707bb4f4cd85ec28fd32c6b626",
       "activation": {
         "mode": "app",
         "any": [],
