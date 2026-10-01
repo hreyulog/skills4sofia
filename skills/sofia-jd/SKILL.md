@@ -7,7 +7,16 @@ description: Operate the native HarmonyOS JD app for search and read-only shoppi
 
 Package: `com.jd.hm.mall`.
 
-Use this Skill together with Sofia's phone-operation and failure-recovery rules. This is a read-only workflow unless a later task explicitly obtains approval for a side effect. Never add to cart, order, pay, log in, grant permissions or accept new agreements during research.
+Use this Skill together with Sofia's phone-operation and failure-recovery rules. This is a read-only workflow unless a later task explicitly obtains approval for a side effect. Never add to cart, order, pay, grant permissions or accept new agreements during research.
+
+## Saved login and blockers
+
+The owner permits reuse of an existing saved login for shopping research. A login banner alone does not prove research is blocked: read whether results and controls remain available first.
+
+- If a login page offers an observed existing-account/session continuation or saved-login action that needs no password entry, verification code, biometric confirmation, new agreement, permission or new account linkage, attempt that restoration ONCE. Use only the account already shown; never guess an account or retrieve credentials. A prefilled phone number alone is not a saved authenticated session.
+- Verify the returned observation: login UI must disappear and the requested app/search must be visible. A click acknowledgement alone is not successful login. If a stale action was skipped, do not repeat it as a login attempt.
+- If restoration still shows login, needs human input, or no eligible saved-login control exists, record the blocker and move to the next requested platform immediately. Do not tap around the login page, Back and resubmit the search, or try a different login method.
+- CAPTCHA, risk verification, payment and new consent remain human steps. For a multi-platform comparison finish independent platforms before asking for manual help, rather than pausing the whole task at the first blocker.
 
 ## Recognize the page before acting
 
@@ -17,6 +26,10 @@ Use this Skill together with Sofia's phone-operation and failure-recovery rules.
 - The dedicated search page exposes its query field as a `TextArea`; it may not advertise `editable=true` even though it is the real text-entry control.
 - A search-results page should expose the current query in the top search area before the result list. Verify the query before treating any listing as evidence.
 - Treat the page as an existing results page when the active query is visible together with result-list structures/product cards. Do not reopen the search box merely because the page also contains suggestion chips or a shop banner. If the existing query already matches the task and freshness was not explicitly required, read the current results instead of resubmitting the same query.
+
+## Bounded route
+
+Open -> identify search frame -> replace+submit query -> read same-card results -> optional single scroll -> finish. A required login interrupts this route: restore a saved session once if eligible, otherwise move to the next app. Do not Back out of a required login and search again. Do not choose a scan/camera/list-purchase icon merely because it is near the query.
 
 ## Search efficiently
 

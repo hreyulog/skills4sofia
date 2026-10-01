@@ -14,6 +14,7 @@ skills/
   sofia-price-comparison/SKILL.md
   sofia-jd/SKILL.md
   sofia-taobao/SKILL.md
+  sofia-pinduoduo/SKILL.md
   sofia-result-presentation/SKILL.md
 ```
 
@@ -89,3 +90,11 @@ Example future app skill:
 GitHub is the source of truth for development, review, history and tagging. A later publish workflow can upload immutable skill artifacts to Huawei Cloud Storage and publish a release pointer through Remote Config. Remote Config can then control enablement, version selection and staged rollout without an AppGallery app update.
 
 Cloud-delivered content should be downloaded to app-private storage, verified against the expected SHA-256, activated atomically, and rolled back to the previous verified catalog or bundled snapshot on failure.
+
+## Current snapshot (2026-10-01)
+
+Catalog `2026-10-01.5` contains seven skills and matches the bundled snapshot in Sofia 1.9.28. Native Agent discovery exposes catalog metadata first and reads selected content through `harmony_skill_read`.
+
+The current app still loads its bundled snapshot. Publishing this repository does not automatically update installed apps; a remote skill downloader and verified cache are not implemented yet. The Linux Codex path still installs four core skills from the app package.
+
+Recent updates cover saved-login reuse, shopping without per-app call quotas, controller approval and manual takeover, file and original gallery photo delivery, and embedded-browser routing.

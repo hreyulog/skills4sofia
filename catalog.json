@@ -1,45 +1,47 @@
 {
   "schemaVersion": 1,
-  "catalogVersion": "2026-09-30.6",
+  "catalogVersion": "2026-10-01.5",
   "skills": [
     {
       "name": "sofia-phone-operation",
-      "version": "1.1.1",
+      "version": "1.1.8",
       "enabled": true,
       "layer": "core",
       "priority": 10,
       "artifact": "skills/sofia-phone-operation/SKILL.md",
-      "sha256": "200f761c5e7052cc27690f3445fb922094accf2bab0e0db8b85f3a114a1d71fe",
+      "sha256": "8fd4cdbcc0d603ade0e4d6197e6fe5a85800ec353fdd27cf1aa70e08185959ae",
       "activation": {
         "mode": "always",
         "any": [],
         "appAliases": [],
         "bundles": []
-      }
+      },
+      "description": "Operate installed HarmonyOS apps with the phone-local HDC tools, current UI evidence and safe foreground restoration. Apply when the task requires an external app."
     },
     {
       "name": "sofia-failure-recovery",
-      "version": "1.1.2",
+      "version": "1.1.3",
       "enabled": true,
       "layer": "core",
       "priority": 20,
       "artifact": "skills/sofia-failure-recovery/SKILL.md",
-      "sha256": "b0d8d963b080a97276a047d7aa5e6a79c3c16bec5b0917f9e06efd85031925a3",
+      "sha256": "8be6ae65cf72afa0e5786940d613312ae3ad8be877fa32a671b5aec8a8c257c8",
       "activation": {
         "mode": "always",
         "any": [],
         "appAliases": [],
         "bundles": []
-      }
+      },
+      "description": "Recover from changed pages, uncertain inputs, system dialogs and phone transport errors with bounded retries and honest partial results."
     },
     {
       "name": "sofia-price-comparison",
-      "version": "1.1.2",
+      "version": "1.1.4",
       "enabled": true,
       "layer": "task",
       "priority": 40,
       "artifact": "skills/sofia-price-comparison/SKILL.md",
-      "sha256": "94c10137beb495651edc5b37a158287f88a0583bbfea527011c4bdc5a0597d7a",
+      "sha256": "b633d7e7cb90cc114513e066f81bee449fb5add8b4f020124c3fd918a479bc78",
       "activation": {
         "mode": "keywords",
         "any": [
@@ -55,16 +57,17 @@
         ],
         "appAliases": [],
         "bundles": []
-      }
+      },
+      "description": "Compare products across requested shopping apps using exact SKU evidence, price conditions and bounded work per platform. Apply only to shopping comparison tasks."
     },
     {
       "name": "sofia-jd",
-      "version": "1.0.2",
+      "version": "1.0.3",
       "enabled": true,
       "layer": "app",
       "priority": 50,
       "artifact": "skills/sofia-jd/SKILL.md",
-      "sha256": "d85457b245dea9b92edea694da2a0029fcfccc0102e6edb1e16aafb5970cf06a",
+      "sha256": "326918c0a07d6638c73ecdfc4d6f2618f6b162c4467eb267e7ba6b7d19d9cad5",
       "activation": {
         "mode": "app",
         "any": [],
@@ -76,16 +79,17 @@
         "bundles": [
           "com.jd.hm.mall"
         ]
-      }
+      },
+      "description": "Operate the native HarmonyOS JD app for search and read-only shopping research. Apply when the task names JD/京东 or targets com.jd.hm.mall."
     },
     {
       "name": "sofia-taobao",
-      "version": "1.0.4",
+      "version": "1.0.6",
       "enabled": true,
       "layer": "app",
       "priority": 51,
       "artifact": "skills/sofia-taobao/SKILL.md",
-      "sha256": "67f28eeac7f7c4691d59d75368c7693b52325ddf0a9b04eade2134038343d1b4",
+      "sha256": "b10b761662675fd7a7c70a701a06a2b1ac123ab22893b54ee769ffdf3d4a8639",
       "activation": {
         "mode": "app",
         "any": [],
@@ -97,7 +101,30 @@
         "bundles": [
           "com.taobao.taobao4hmos"
         ]
-      }
+      },
+      "description": "Operate the native HarmonyOS Taobao app for search and read-only shopping research. Apply when the task names Taobao/淘宝 or targets com.taobao.taobao4hmos."
+    },
+    {
+      "name": "sofia-pinduoduo",
+      "version": "1.0.1",
+      "enabled": true,
+      "layer": "app",
+      "priority": 52,
+      "artifact": "skills/sofia-pinduoduo/SKILL.md",
+      "sha256": "799499f5e4f1b1640c90c1add1234d0b0e36443a2152548bdf27d4dd1c992f7e",
+      "activation": {
+        "mode": "app",
+        "any": [],
+        "appAliases": [
+          "拼多多",
+          "Pinduoduo",
+          "pinduoduo"
+        ],
+        "bundles": [
+          "com.xunmeng.pinduoduo.hos"
+        ]
+      },
+      "description": "Search and read product evidence in the installed HarmonyOS Pinduoduo app. Apply for 拼多多/Pinduoduo or com.xunmeng.pinduoduo.hos."
     },
     {
       "name": "sofia-result-presentation",
@@ -112,7 +139,8 @@
         "any": [],
         "appAliases": [],
         "bundles": []
-      }
+      },
+      "description": "Present any final Sofia result as concise mobile-friendly semantic content. Apply to every final user-facing response, regardless of task domain."
     }
   ]
 }

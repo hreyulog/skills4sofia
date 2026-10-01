@@ -7,7 +7,16 @@ description: Operate the native HarmonyOS Taobao app for search and read-only sh
 
 Package: `com.taobao.taobao4hmos`. Main ability observed: `Taobao_mainAbility`.
 
-Use this Skill together with Sofia's phone-operation and failure-recovery rules. Never add to cart, order, pay, log in, grant permissions or accept new agreements during research.
+Use this Skill together with Sofia's phone-operation and failure-recovery rules. Never add to cart, order, pay, grant permissions or accept new agreements during research.
+
+## Saved login and blockers
+
+The owner permits reuse of an existing saved login for shopping research. A login banner alone does not prove research is blocked: read whether results and controls remain available first.
+
+- If a login page offers an observed existing-account/session continuation or saved-login action that needs no password entry, verification code, biometric confirmation, new agreement, permission or new account linkage, attempt that restoration ONCE. Use only the account already shown; never guess an account or retrieve credentials. A prefilled phone number alone is not a saved authenticated session.
+- Verify the returned observation: login UI must disappear and the requested app/search must be visible. A click acknowledgement alone is not successful login. If a stale action was skipped, do not repeat it as a login attempt.
+- If restoration still shows login, needs human input, or no eligible saved-login control exists, record the blocker and move to the next requested platform immediately. Do not tap around the login page, Back and resubmit the search, or try a different login method.
+- CAPTCHA, risk verification, payment and new consent remain human steps. For a multi-platform comparison finish independent platforms before asking for manual help, rather than pausing the whole task at the first blocker.
 
 ## Page structure
 
@@ -21,7 +30,7 @@ The current home page exposes a useful tree:
 - a search area is visible near `searchBoxPos0`;
 - the right-side search action exposes visible text `搜索`.
 
-Use tree mode here. A recommendation visible on home is not a substitute for running the user's requested search.
+Use tree mode here. Prefer the observed `搜索` action that enters the dedicated input page. Tapping a recommendation/query label can immediately open existing results instead. If that happens, read the current query first: keep matching results; if it is wrong, open the actual observed query field once. Do not repeatedly tap the same home/search container when it returns an unchanged page. After two unchanged attempts, inspect `both` once to choose a DIFFERENT visible control; if it also fails, stop this platform. A recommendation visible on home is not a substitute for running the requested search.
 
 ### Search input page
 
@@ -68,7 +77,7 @@ Sofia may stay visible in a system PiP while Taobao is foreground.
 - Keep Sofia's PiP; do not close it as part of the Taobao workflow.
 - Ignore Sofia/SceneBoard text when interpreting a Taobao screenshot.
 - If the PiP covers part of a product card, do not guess the hidden text. Prefer another fully visible card or move the result content once so the card becomes unobstructed.
-- Clipboard/share/promotion overlays are separate windows. Dismiss an ordinary popup once if safe; login, CAPTCHA, privacy or permission choices belong to the user.
+- Clipboard/share/promotion overlays are separate windows. Dismiss an ordinary popup once if safe; eligible saved-login restoration follows the rule above; CAPTCHA, new privacy agreements or permission choices belong to the user.
 
 ## Human verification handoff
 
@@ -86,4 +95,4 @@ For a Taobao-only task, this is a blocker until the human finishes verification.
 
 ## Completion
 
-For a normal search or comparison, two or three clearly readable matching cards are sufficient. Prefer verified card consistency over more scrolling. Never alternate `swipe -> empty observe -> swipe/observe` on a sparse result state.
+For a normal search or comparison, two or three clearly readable matching cards are sufficient. Prefer verified card consistency over more scrolling. Never alternate `swipe -> empty observe -> swipe/observe` on a sparse result state. There is no per-app call quota. Continue necessary evidence-producing actions, preserve collected prices and visit every requested platform.
