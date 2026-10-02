@@ -15,6 +15,7 @@ skills/
   sofia-jd/SKILL.md
   sofia-taobao/SKILL.md
   sofia-pinduoduo/SKILL.md
+  sofia-wechat/SKILL.md
   sofia-result-presentation/SKILL.md
 ```
 
@@ -91,10 +92,12 @@ GitHub is the source of truth for development, review, history and tagging. A la
 
 Cloud-delivered content should be downloaded to app-private storage, verified against the expected SHA-256, activated atomically, and rolled back to the previous verified catalog or bundled snapshot on failure.
 
-## Current snapshot (2026-10-01)
+## Current snapshot (2026-10-02)
 
-Catalog `2026-10-01.5` contains seven skills and matches the bundled snapshot in Sofia 1.9.28. Native Agent discovery exposes catalog metadata first and reads selected content through `harmony_skill_read`.
+Catalog `2026-10-02.2` contains eight skills and matches the bundled snapshot in Sofia 1.9.34. Native Agent discovery exposes catalog metadata first and reads selected content through `harmony_skill_read`.
 
 The current app still loads its bundled snapshot. Publishing this repository does not automatically update installed apps; a remote skill downloader and verified cache are not implemented yet. The Linux Codex path still installs four core skills from the app package.
 
 Recent updates cover saved-login reuse, shopping without per-app call quotas, controller approval and manual takeover, file and original gallery photo delivery, and embedded-browser routing.
+
+WeChat guidance covers conversation replies, Moments drafts, informational sheets, Sofia window occlusion and final-step Send/Publish approval. Native Agent also loads the matching app Skill when opening its exact bundle.

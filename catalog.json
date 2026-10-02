@@ -1,15 +1,15 @@
 {
   "schemaVersion": 1,
-  "catalogVersion": "2026-10-02.1",
+  "catalogVersion": "2026-10-02.2",
   "skills": [
     {
       "name": "sofia-phone-operation",
-      "version": "1.1.9",
+      "version": "1.1.10",
       "enabled": true,
       "layer": "core",
       "priority": 10,
       "artifact": "skills/sofia-phone-operation/SKILL.md",
-      "sha256": "b74be3ea056d73e2c7a96c27a837776650ae46b8f612b85a101a0af3f65ebc9b",
+      "sha256": "7238bd99b12d4c9b49a21ee530c36e281f7042939ac28f3eb8f084b82b783806",
       "activation": {
         "mode": "always",
         "any": [],
@@ -141,6 +141,29 @@
         "bundles": []
       },
       "description": "Present any final Sofia result as concise mobile-friendly semantic content. Apply to every final user-facing response, regardless of task domain."
+    },
+    {
+      "name": "sofia-wechat",
+      "version": "1.0.0",
+      "enabled": true,
+      "layer": "app",
+      "priority": 53,
+      "artifact": "skills/sofia-wechat/SKILL.md",
+      "sha256": "c75f48a8695e0155d0c405c96957548bb39facf1b1138890fc2958c5203f8268",
+      "activation": {
+        "mode": "app",
+        "any": [],
+        "appAliases": [
+          "微信",
+          "WeChat",
+          "wechat",
+          "朋友圈"
+        ],
+        "bundles": [
+          "com.tencent.wechat"
+        ]
+      },
+      "description": "Operate WeChat conversations and Moments drafts, distinguish Sofia overlays, handle informational sheets and request final Send/Publish approval."
     }
   ]
 }
