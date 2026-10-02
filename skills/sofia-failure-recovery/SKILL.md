@@ -23,6 +23,8 @@ Apply these rules whenever a phone tool fails or shows a blocker. Track consecut
 | Sofia PiP covers a target control or card | Keep the PiP. Prefer the target app's tree node, another fully visible equivalent control/card, or one safe content scroll. Do not tap through the PiP and do not close Sofia merely to reach the target. |
 | A screenshot causes a share/clipboard overlay | Treat the new overlay as a real page change. Dismiss an ordinary non-sensitive overlay once if safe, then return to tree-first operation. Do not repeat the screenshot that caused it unless the task cannot proceed otherwise. |
 
+Login, permissions and navigation difficulties are not reasons for remote takeover. Only a currently observed CAPTCHA/verification-code challenge can use that tool. Sending social content uses final-step approval after the Agent prepares the actual draft.
+
 Two consecutive successful tool calls that produce no meaningful new task evidence are also a stop signal for that interaction. Change strategy once or leave the app/platform; do not keep polling, scrolling or reopening simply to avoid a partial result.
 
 Never fall back to legacy root/AEA tools, arbitrary shell commands or security setting changes. A new target must still come from installed-app discovery. Preserve successful earlier evidence. End with a Chinese explanation of what was actually observed, what could not be verified and whether the user must act. Do not claim successful actions or prices from an error or a launch acknowledgement.

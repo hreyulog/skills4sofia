@@ -1,15 +1,15 @@
 {
   "schemaVersion": 1,
-  "catalogVersion": "2026-10-01.5",
+  "catalogVersion": "2026-10-02.1",
   "skills": [
     {
       "name": "sofia-phone-operation",
-      "version": "1.1.8",
+      "version": "1.1.9",
       "enabled": true,
       "layer": "core",
       "priority": 10,
       "artifact": "skills/sofia-phone-operation/SKILL.md",
-      "sha256": "8fd4cdbcc0d603ade0e4d6197e6fe5a85800ec353fdd27cf1aa70e08185959ae",
+      "sha256": "b74be3ea056d73e2c7a96c27a837776650ae46b8f612b85a101a0af3f65ebc9b",
       "activation": {
         "mode": "always",
         "any": [],
@@ -20,12 +20,12 @@
     },
     {
       "name": "sofia-failure-recovery",
-      "version": "1.1.3",
+      "version": "1.1.4",
       "enabled": true,
       "layer": "core",
       "priority": 20,
       "artifact": "skills/sofia-failure-recovery/SKILL.md",
-      "sha256": "8be6ae65cf72afa0e5786940d613312ae3ad8be877fa32a671b5aec8a8c257c8",
+      "sha256": "d054b5934023d67b550481671680d8b13e651e89068b47f8849912b2ea8d5b44",
       "activation": {
         "mode": "always",
         "any": [],
